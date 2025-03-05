@@ -16,13 +16,13 @@ lb config noauto \
     --parent-mirror-bootstrap "$MIRROR_URL" \
     --parent-mirror-chroot-security "http://deb.debian.org/debian-security" \
     --parent-mirror-binary-security "http://deb.debian.org/debian-security" \
-    --parent-mirror-binary "https://repo2.vanillaos.org" \
+    --parent-mirror-binary "$MIRROR_URL" \
     \
     --archive-areas "main contrib non-free non-free-firmware" \
     --mirror-bootstrap "$MIRROR_URL" \
     --mirror-chroot-security "http://deb.debian.org/debian-security" \
     --mirror-binary-security "http://deb.debian.org/debian-security" \
-    --mirror-binary "https://repo2.vanillaos.org" \
+    --mirror-binary "$MIRROR_URL" \
     \
     --keyring-packages debian-keyring \
     --apt-options "--yes --option Acquire::Retries=5 --option Acquire::http::Timeout=100" \
