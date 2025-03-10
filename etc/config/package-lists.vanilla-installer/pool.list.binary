@@ -2,14 +2,25 @@ b43-fwcutter
 firmware-b43-installer
 firmware-brcm80211
 dkms
-intel-microcode
-iucode-tool
 setserial
 user-setup
 
 efibootmgr
+shim-signed
+
+#if ARCHITECTURES amd64
+intel-microcode
+iucode-tool
+
 grub-efi-amd64
 grub-efi-amd64-bin
 grub-efi-amd64-signed
-shim-signed
 shim-helpers-amd64-signed
+#endif
+
+#if ARCHITECTURES arm64
+grub-efi-arm64
+grub-efi-arm64-bin
+grub-efi-arm64-signed
+shim-helpers-arm64-signed
+#endif
