@@ -8,7 +8,6 @@ squashfs-tools
 cryptsetup
 
 shim-signed
-shim-helpers-amd64-signed
 
 firmware-linux
 firmware-linux-nonfree
@@ -19,10 +18,19 @@ firmware-atheros
 firmware-b43-installer
 firmware-brcm80211
 firmware-sof-signed
-intel-microcode
-amd64-microcode
 b43-fwcutter
 spice-webdavd
+
+#if ARCHITECTURES amd64
+shim-helpers-amd64-signed
+
+intel-microcode
+amd64-microcode
+#endif
+
+#if ARCHITECTURES arm64
+shim-helpers-arm64-signed
+#endif
 
 ca-certificates
 btrfs-progs
@@ -95,5 +103,8 @@ plymouth-themes
 open-vm-tools
 open-vm-tools-desktop
 qemu-guest-agent
+
+#if ARCHITECTURES amd64
 virtualbox-guest-utils
 virtualbox-guest-x11
+#endif
