@@ -22,11 +22,9 @@ rm vanilla-gnome-default-settings.deb
 wget https://github.com/Vanilla-OS/plymouth-theme-vanilla/releases/download/continuous/plymouth-theme-vanilla-bgrt.deb
 wget https://github.com/Vanilla-OS/plymouth-theme-vanilla/releases/download/continuous/plymouth-theme-vanilla-logo.deb
 wget https://github.com/Vanilla-OS/plymouth-theme-vanilla/releases/download/continuous/plymouth-theme-vanilla-text.deb
-apt-get install -y ./plymouth-theme-vanilla.deb
 apt-get install -y ./plymouth-theme-vanilla-bgrt.deb
 apt-get install -y ./plymouth-theme-vanilla-logo.deb
 apt-get install -y ./plymouth-theme-vanilla-text.deb
-rm plymouth-theme-vanilla.deb
 rm plymouth-theme-vanilla-bgrt.deb
 rm plymouth-theme-vanilla-logo.deb
 rm plymouth-theme-vanilla-text.deb
