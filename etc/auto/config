@@ -4,32 +4,25 @@ set -e
 
 . ./terraform.conf
 
-if [ "$HWE_KERNEL" = "yes" ]; then
-    KERNEL_FLAVORS="amd64-hwe-${BASEVERSION}"
-else
-    KERNEL_FLAVORS="amd64"
-fi
-
 lb config noauto \
     --architectures "$ARCH" \
     --mode debian \
     --distribution "$BASECODENAME" \
     --parent-distribution "$BASECODENAME" \
     --linux-packages "linux-image linux-headers" \
-    --linux-flavours "$KERNEL_FLAVORS" \
     --bootappend-live "boot=live config username=vanilla user-fullname=Vanilla quiet splash bgrt_disable" \
     \
     --parent-archive-areas "main contrib non-free non-free-firmware" \
     --parent-mirror-bootstrap "$MIRROR_URL" \
     --parent-mirror-chroot-security "http://deb.debian.org/debian-security" \
     --parent-mirror-binary-security "http://deb.debian.org/debian-security" \
-    --parent-mirror-binary "https://repo2.vanillaos.org" \
+    --parent-mirror-binary "$MIRROR_URL" \
     \
     --archive-areas "main contrib non-free non-free-firmware" \
     --mirror-bootstrap "$MIRROR_URL" \
     --mirror-chroot-security "http://deb.debian.org/debian-security" \
     --mirror-binary-security "http://deb.debian.org/debian-security" \
-    --mirror-binary "https://repo2.vanillaos.org" \
+    --mirror-binary "$MIRROR_URL" \
     \
     --keyring-packages debian-keyring \
     --apt-options "--yes --option Acquire::Retries=5 --option Acquire::http::Timeout=100" \
