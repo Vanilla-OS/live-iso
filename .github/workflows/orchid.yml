@@ -5,7 +5,15 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - runner: ubuntu-latest
+            arch: AMD64
+          - runner: ubuntu-24.04-arm
+            arch: ARM64
+    runs-on: ${{ matrix.runner }}
     container:
       image: ghcr.io/vanilla-os/pico:main
       volumes:
@@ -27,5 +35,5 @@ jobs:
 
     - uses: actions/upload-artifact@v4
       with:
-        name: VanillaOS 2 Orchid ${{ env.CURRENT_DATE }}
+        name: VanillaOS 2 Orchid ${{ matrix.arch }} ${{ env.CURRENT_DATE }}
         path: builds/
