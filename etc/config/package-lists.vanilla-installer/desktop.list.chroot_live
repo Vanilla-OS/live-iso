@@ -49,7 +49,7 @@ gnome-session
 gnome-browser-connector
 gnome-disk-utility
 gnome-control-center
-kgx
+gnome-console
 
 wpasupplicant
 network-manager-gnome
