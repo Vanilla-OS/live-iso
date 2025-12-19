@@ -25,8 +25,9 @@ lb config noauto \
     --mirror-binary "$MIRROR_URL" \
     \
     --keyring-packages debian-keyring \
-    --apt-options "--yes --option Acquire::Retries=5 --option Acquire::http::Timeout=100" \
+    --apt-options "--yes --option Acquire::Check-Valid-Until=false --option Acquire::Retries=5 --option Acquire::http::Timeout=100" \
     --apt-recommends true \
+    --apt-source-archives false \
     --cache-packages false \
     --uefi-secure-boot enable \
     --binary-images iso-hybrid \
@@ -39,7 +40,6 @@ lb config noauto \
     --debootstrap-options "--exclude=pinephone-tweaks,mobile-tweaks-common,librem5-tweaks,pinetab-tweaks --include=apt-transport-https,ca-certificates,openssl" \
     --checksums md5 \
     --clean \
-    --debootstrap-options "--keyring=/usr/share/keyrings/vanilla_keyring.gpg" \
     "${@}"
 
 
