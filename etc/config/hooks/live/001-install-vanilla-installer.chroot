@@ -1,9 +1,9 @@
 #!/bin/sh
 # Description: Install vanilla-installer from source
 
-wget https://github.com/Vanilla-OS/Albius/releases/download/continuous/albius.deb
-apt-get install -y ./albius.deb
-rm albius.deb
+wget https://github.com/Vanilla-OS/Albius/releases/download/continuous/albius-$(dpkg --print-architecture).deb
+apt-get install -y ./albius*.deb
+rm albius*.deb
 
 wget https://github.com/Vanilla-OS/vanilla-installer/releases/download/continuous/vanilla-installer.deb
 apt-get install -y ./vanilla-installer.deb
