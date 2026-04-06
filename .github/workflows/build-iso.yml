@@ -35,5 +35,5 @@ jobs:
 
     - uses: actions/upload-artifact@v4
       with:
-        name: VanillaOS 2 Orchid ${{ matrix.arch }} ${{ env.CURRENT_DATE }}
+        name: Vanilla OS ${{ matrix.arch }} ${{ env.CURRENT_DATE }}
         path: builds/
