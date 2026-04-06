@@ -27,7 +27,7 @@ jobs:
       if: github.repository == 'vanilla-os/live-iso'
       working-directory: amd64
       run: |
-        gh release upload "2.0" *.iso *.txt --clobber --repo vanilla-os/live-iso
+        gh release upload "3.0" *.iso *.txt --clobber --repo vanilla-os/live-iso
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
