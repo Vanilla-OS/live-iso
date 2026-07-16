@@ -15,7 +15,7 @@ jobs:
             arch: ARM64
     runs-on: ${{ matrix.runner }}
     container:
-      image: ghcr.io/vanilla-os/pico:main
+      image: ghcr.io/vanilla-os/pico:latest
       volumes:
         - /proc:/proc
         - /:/run/host
