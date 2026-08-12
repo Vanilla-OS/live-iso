@@ -38,7 +38,6 @@ expect
 cifs-utils
 xfsprogs
 jfsutils
-reiserfsprogs
 lvm2
 wamerican
 fwupdate
@@ -91,7 +90,6 @@ orca
 brltty
 espeak-ng
 at-spi2-core
-mousetweaks
 speech-dispatcher
 speech-dispatcher-espeak-ng
 gparted
