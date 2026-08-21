@@ -17,15 +17,14 @@ jobs:
       with:
         fetch-depth: 0
 
-    - name: Download Vanilla OS Latest ZIP
-      run: wget https://download.vanillaos.org/latest.zip -O latest.zip
-
-    - name: Unzip the downloaded file
-      run: unzip latest.zip
+    - name: Download Vanilla OS latest ISO
+      run: |
+        curl -s https://info.vanillaos.org/downloads.json | jq -r '.[] | .Iso, .Sha256' | while read -r url; do
+          wget "$url"
+        done
 
     - name: Upload ISO and TXT files to Release
       if: github.repository == 'vanilla-os/live-iso'
-      working-directory: amd64
       run: |
         gh release upload "3.0" *.iso *.txt --clobber --repo vanilla-os/live-iso
       env:
@@ -36,4 +35,4 @@ jobs:
       if: github.repository == 'vanilla-os/live-iso'
       uses: actions/attest-build-provenance@v1
       with:
-        subject-path: 'amd64/*.iso, amd64/*.txt'
+        subject-path: '*.iso, *.txt'
