@@ -18,6 +18,10 @@ firmware-atheros
 firmware-b43-installer
 firmware-brcm80211
 firmware-sof-signed
+firmware-intel-graphics
+firmware-intel-misc
+firmware-mediatek
+firmware-nvidia-graphics
 b43-fwcutter
 spice-webdavd
 
