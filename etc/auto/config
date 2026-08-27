@@ -25,6 +25,7 @@ lb config noauto \
     --mirror-binary "$MIRROR_URL" \
     \
     --keyring-packages debian-keyring \
+    --apt-indices false \
     --apt-options "--yes --option Acquire::Check-Valid-Until=false --option Acquire::Retries=5 --option Acquire::http::Timeout=100" \
     --apt-recommends true \
     --apt-source-archives false \
