@@ -63,7 +63,7 @@ build () {
 # LIVE-BUILD BUILD #
 #------------------#
 "
-  lb build
+  MKSQUASHFS_OPTIONS="-b 1048576" lb build
 
   echo -e "
 #---------------------------#
