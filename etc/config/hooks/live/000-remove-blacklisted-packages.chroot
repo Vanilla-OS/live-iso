@@ -4,9 +4,8 @@
 echo "P: Begin executing remove-blacklisted-packages chroot hook..."
 
 apt-get autoremove --purge -f -q -y \
-    apport \
-    snapd \
-    update-notifier
+    containernetworking-plugins \
+    papers
 
 # fake desktop entries to prevent some applications from displaying
 mkdir -p /etc/skel/.local/share/applications

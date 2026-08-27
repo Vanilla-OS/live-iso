@@ -44,7 +44,6 @@ xfsprogs
 jfsutils
 lvm2
 wamerican
-fwupdate
 mokutil
 rsync
 sudo
@@ -53,11 +52,9 @@ zstd
 ntpsec
 
 gdm3
-xorg
 
 gnome-shell
 gnome-session
-gnome-browser-connector
 gnome-disk-utility
 gnome-control-center
 gnome-console
@@ -68,14 +65,9 @@ modemmanager
 bluez
 
 epiphany-browser
-xdg-desktop-portal-gnome
 evolution-data-server
 mutter
-gjs
 
-fonts-cantarell
-fonts-dejavu-core
-fonts-freefont-ttf
 fonts-noto-color-emoji
 fonts-indic
 fonts-kacst-one
@@ -98,7 +90,7 @@ speech-dispatcher
 speech-dispatcher-espeak-ng
 gparted
 
-podman
+golang-github-containers-common
 
 plymouth-themes
 
@@ -108,5 +100,4 @@ qemu-guest-agent
 
 #if ARCHITECTURES amd64
 virtualbox-guest-utils
-virtualbox-guest-x11
 #endif
