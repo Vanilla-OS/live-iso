@@ -20,6 +20,9 @@ jobs:
         - /proc:/proc
         - /:/run/host
       options: --privileged -it
+    permissions:
+      attestations: write
+      id-token: write
 
     steps:
     - uses: actions/checkout@v4
@@ -37,3 +40,8 @@ jobs:
       with:
         name: Vanilla OS ${{ matrix.arch }} ${{ env.CURRENT_DATE }}
         path: builds/
+
+    - name: Attest ISO
+      uses: actions/attest@v4
+      with:
+        subject-path: builds/*/*.iso

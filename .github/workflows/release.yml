@@ -8,8 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      id-token: write
-      attestations: write
 
     steps:
     - name: Checkout repository
@@ -29,10 +27,3 @@ jobs:
         gh release upload "3.0" *.iso *.txt --clobber --repo vanilla-os/live-iso
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-    - name: Attest generated files
-      id: attest
-      if: github.repository == 'vanilla-os/live-iso'
-      uses: actions/attest-build-provenance@v1
-      with:
-        subject-path: '*.iso, *.txt'
