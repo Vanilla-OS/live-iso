@@ -62,7 +62,7 @@ gnome-control-center
 gnome-console
 
 wpasupplicant
-network-manager-gnome
+network-manager-applet
 modemmanager
 bluez
 
